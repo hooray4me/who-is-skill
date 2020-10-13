@@ -24,8 +24,9 @@ class WhoIs(MycroftSkill):
     def handle_is_who(self, message):
         utt = message.data.get('utterance')
         t = words_in_utt(utt)
-        self.log.info(t)
-        self.speak_dialog('is.who', {"status": t})
+        k = WORDS[t]
+        self.log.info(k)
+        self.speak_dialog('is.who', {"status": k})
 
 def create_skill():
     return WhoIs()
