@@ -1,5 +1,14 @@
 from mycroft import MycroftSkill, intent_file_handler
 
+WORDS = {
+    'steve': ('steve'),
+    'darren dean': ('darren'),
+    'darren deen': ('darren'),
+    'darin deen': ('darren'),
+    'rob hedrick': ('rob'),
+    'rob headrick': ('rob'),
+    'rob head rick': ('rob')
+}
 def words_in_utt(utterance):
     utterance = utterance.lower()
     for key in WORDS:
