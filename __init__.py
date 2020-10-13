@@ -13,9 +13,10 @@ class WhoIs(MycroftSkill):
 
     @intent_file_handler('is.who.intent')
     def handle_is_who(self, message):
-        utterance = message.data.get('utterance')
-        self.log.info(utterance)
-        self.speak_dialog('is.who', {"status": utterance})
+        utt = message.data.get('utterance')
+        t = words_in_utt(utt)
+        self.log.info(t)
+        self.speak_dialog('is.who', {"status": t})
 
 def create_skill():
     return WhoIs()
